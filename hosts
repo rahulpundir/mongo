@@ -1,0 +1,9 @@
+[mongo_master]
+192.168.33.20 mongodb_master=True
+
+[mongo_replicas]
+192.168.33.19
+
+[mongo:children]
+mongo_master
+mongo_replicas

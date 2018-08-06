@@ -1,0 +1,13 @@
+- hosts: "all"
+  become: no
+  gather_facts: yes
+  roles:
+    - role: ansible-role-mongodb
+      when: "'mongo_master' in group_names"
+
+- hosts: "all"
+  become: no
+  gather_facts: yes
+  roles:
+    - role: ansible-role-mongodb
+      when: "'mongo_replicas' in group_names"
